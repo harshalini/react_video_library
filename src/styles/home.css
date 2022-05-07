@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Federo&display=swap');
+@import "./colors.css";
+body {
+    font-family: var(--font);
+    background-color: var(--black);
+    color: var(--white);
+}
+.navbar {
+    background: linear-gradient(var(--black), var(--light-pink));
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100vw;
+    z-index: 5;
+}
+nav ul {
+    display: flex;
+    justify-items: flex-end;
+    list-style: none;
+}
+nav ul li {
+    flex-basis: 15%;
+    margin: 1rem;
+}
+.search-bar {
+    border: solid 5px var(--black);
+    width: 20rem;
+    margin: 1.5rem 25rem 0 0;
+}
+.logo {
+    font-family: 'Federo', sans-serif;
+    color: var(--default-pink);
+    font-size: 3.5rem;
+    padding: 0 1.5rem;
+    border: solid 7px var(--default-pink);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    background-color: var(--black);
+    margin: 0.5rem auto 0 2rem;
+    cursor: pointer;
+}
+.login-btn {
+    background-color: var(--default-pink);
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 500;
+    height: 1rem;
+    padding: 0.5rem;
+    border: solid 3px var(--black);
+    margin-right: 3rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.login-btn:hover {
+    background-color: var(--light-pink);
+    color: var(--black);
+}
+.flex-div {
+    display: flex;
+}
+.home-flex {
+    display: flex;
+    flex-direction: column;
+}
+.lib-header {
+    display: flex;
+}
+.lib-sidebar {
+    background: linear-gradient(var(--light-pink), black);
+    color: var(--black);
+    width: 16rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    height: 100vh;
+    margin-top: 6rem;
+    float: left;
+    position: relative;
+}
+.lib-sidebar li {
+    padding: 1rem;
+    list-style: none;
+    display: flex;
+}
+.lib-sidebar li:hover {
+    background-color: var(--default-pink);
+    color: var(--white);
+}
+.lib-sidebar a {
+    text-decoration: none;
+    color: var(--black);
+}
+.sidebar-icon {
+    font-size: 1.8rem;
+}
+.lib-sidebar li span {
+    justify-self: flex-start;
+    margin-left: 1.5rem;
+}
+.header {
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 6rem;
+}
+.header-img {
+    margin-top: 2rem;
+}
+.explore-btn {
+    position: relative;
+    margin: 14rem 0 0 -20.7rem;
+    font-size: 13.5rem;
+    color:var(--gray);
+    animation:spin 4s linear infinite;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+}
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+.category-heading {
+    margin-top: -3rem;
+}
+.genre-container {
+    display: flex;
+    margin-bottom: 4rem;
+}
+.card-with-textOverlay {
+    border-top: solid 5px var(--default-pink);
+}
+span.genre-name {
+    font-size: 2rem;
+    color: var(--black);
+    margin-top: -5rem;
+    font-weight: 700;
+}
+.opaque-image {
+    z-index: 9;
+}
+.opaque-image:hover {
+    opacity: 1;
+}

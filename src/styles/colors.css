@@ -1,0 +1,16 @@
+:root {
+    --default-pink: #B24080;
+    --black: #000000;
+    --light-pink: #FFA6D5;
+    --white: #fff;
+    --gray: #495464;
+    --font: 'Poppins', sans-serif;
+    --shadow: inset 0 0 50px var(--white),
+        inset 20px 0 60px var(--default-pink),
+        inset -20px 0 60px var(--light-pink),
+        inset 20px 0 300px var(--default-pink),
+        inset -20px 0 300px var(--light-pink),
+        0 0 50px var(--white),
+        -10px 0 60px var(--default-pink),
+        10px 0 60px var(--light-pink);
+}
