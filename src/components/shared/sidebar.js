@@ -1,13 +1,33 @@
 export const Sidebar = () => {
+    const sidebarPages = [
+        {
+            page: "Home",
+            icon: "home"
+        },
+        {
+            page: "Explore",
+            icon: "compass"
+        },
+        {
+            page: "Watch later",
+            icon: "film"
+        },
+        {
+            page: "Liked videos",
+            icon: "heart"
+        },
+        {
+            page: "History",
+            icon: "history"
+        }
+    ]
     return (
         <div className="flex-div">
         <aside className="lib-sidebar">
             <ul>
-                <a href="#"><li><i className="sidebar-icon fas fa-home"></i><span>Home</span></li></a>
-                <a href="#"><li><i className="sidebar-icon fas fa-compass"></i><span>Explore</span></li></a>
-                <a href="#"><li><i className="sidebar-icon fas fa-film"></i><span>Watch later</span></li></a>
-                <a href="#"><li><i className="sidebar-icon fas fa-heart"></i><span>Liked videos</span></li></a>
-                <a href="#"><li><i className="sidebar-icon fas fa-history"></i><span>History</span></li></a>
+                {sidebarPages.map(({page, icon}) => (
+                    <a href="#"><li><i className = {`sidebar-icon fas fa-${icon}`}></i><span>{page}</span></li></a>
+                ))}
             </ul>
         </aside>
         </div>
