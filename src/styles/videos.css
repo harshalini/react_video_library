@@ -1,0 +1,123 @@
+@import url(./home.css);
+
+:root {
+    --card-color: #181818;
+}
+
+.lib-sidebar {
+    float: left;
+    position: fixed;
+    top: 0rem;
+}
+
+.videos-grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    row-gap: 1rem;
+    margin: 1rem 0 0 15.5rem;
+}
+
+.card-with-badge {
+    width: 18rem;
+    background-color: var(--card-color);
+}
+
+.card-text {
+    color: var(--white);
+}
+
+.card-text span {
+    font-size: 1.1rem;
+    color: var(--white);
+}
+
+.card-image img {
+    height: 10rem;
+}
+
+.card-text .card-title {
+    letter-spacing: normal;
+}
+
+.creator-name {
+    font-size: 0.9rem;
+    margin: 0 0 0.2rem 0;
+}
+
+.video-stats {
+    margin-top: -1rem;
+}
+
+.price p {
+    color: var(--white);
+}
+
+.top-badge {
+    margin: -13rem 0 0 13.5rem;
+    background-color: var(--light-pink);
+    visibility: hidden;
+}
+
+.top-badge i {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.watch-later-btn {
+    margin-right: 0.5rem;
+}
+
+.card-with-badge:hover {
+    box-shadow: 0 5px 10px var(--default-pink), 0 5px 12px var(--default-pink)
+}
+
+.card-with-badge:hover .top-badge {
+    visibility: visible;
+}
+
+.like-btn {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--light-pink);
+    color: var(--white);
+    visibility: hidden;
+    margin: -1rem 0 0 6.8rem;
+}
+
+.card-with-badge:hover .like-btn {
+    visibility: visible;
+}
+
+.chips-container {
+    margin-top: 6.5rem;
+    margin-left: 14rem;
+}
+
+.chips-list {
+    display: flex;
+    font-size: 1.2rem;
+}
+
+.chips-list label {
+    padding: 0.5rem;
+    list-style: none;
+    margin: 0.5rem;
+    border-radius: 10px;
+    border: solid 2px var(--white);
+    cursor: pointer;
+    padding-top: 0.3rem;
+}
+
+.non-active-filter {
+    background-color: var(--card-color);
+}
+
+.active-filter {
+    background-color: var(--default-pink);
+}
+
+.chips-list input {
+    display: none;
+}

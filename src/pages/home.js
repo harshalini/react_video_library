@@ -1,4 +1,5 @@
 import { Navbar, Sidebar, Genres } from "../components/allComp"
+import { Link } from "react-router-dom"
 export const Home = () => {
     return (
         <div>
@@ -8,7 +9,7 @@ export const Home = () => {
                     <Sidebar />
                     <div className="header">
                         <img src="../assets/header-img.svg" className="header-img"></img>
-                        <a><i className="explore-btn fas fa-play-circle"></i></a>
+                        <Link to = "/videoListing"><i className="explore-btn fas fa-play-circle"></i></Link>
                     </div>
                 </div>
                 <div>
