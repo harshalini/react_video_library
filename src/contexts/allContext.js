@@ -1,0 +1,1 @@
+export { CategoriesProvider } from "./category-context";
