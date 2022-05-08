@@ -1,32 +1,38 @@
+import { Link } from "react-router-dom"
 export const Sidebar = () => {
     const sidebarPages = [
         {
             page: "Home",
-            icon: "home"
+            icon: "home",
+            link: "/"
         },
         {
             page: "Explore",
-            icon: "compass"
+            icon: "compass",
+            link: "/videoListing"
         },
         {
             page: "Watch later",
-            icon: "film"
+            icon: "film",
+            link: "/"
         },
         {
             page: "Liked videos",
-            icon: "heart"
+            icon: "heart",
+            link: "/"
         },
         {
             page: "History",
-            icon: "history"
+            icon: "history",
+            link: "/"
         }
     ]
     return (
         <div className="flex-div">
         <aside className="lib-sidebar">
             <ul>
-                {sidebarPages.map(({page, icon}) => (
-                    <a href="#"><li><i className = {`sidebar-icon fas fa-${icon}`}></i><span>{page}</span></li></a>
+                {sidebarPages.map(({page, icon, link}) => (
+                    <Link to = {`${link}`}><li><i className = {`sidebar-icon fas fa-${icon}`}></i><span>{page}</span></li></Link>
                 ))}
             </ul>
         </aside>

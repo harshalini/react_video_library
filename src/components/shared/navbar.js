@@ -1,6 +1,6 @@
 export const Navbar = () => {
-    return (
-        <div className="navbar">
+  return (
+    <div className="navbar">
       <div className="logo">
         <a>vivir</a>
       </div>
@@ -8,12 +8,12 @@ export const Navbar = () => {
         <input type="text" placeholder="Watch something" className="search-bar"></input>
       </div>
       <nav>
-          <ul>
+        <ul>
           <li>
-              <span className="login-btn"><a>login</a></span>
-            </li>
-          </ul>
+            <span className="login-btn"><a>login</a></span>
+          </li>
+        </ul>
       </nav>
-      </div>
-    )
+    </div>
+  )
 }
