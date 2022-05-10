@@ -7,7 +7,7 @@ export const VideoCard = ({ _id, title, creator, views }) => {
         <Link to={`/singleVideo/${_id}`} className="video-link">
             <div class="ui-component card card-with-badge">
                 <div class="card-image">
-                    <img src={`https://img.youtube.com/vi/${_id}/hqdefault.jpg`} />
+                    <img src={`https://img.youtube.com/vi/${_id}/hqdefault.jpg`} alt="video-thumbnail"/>
                 </div>
                 <div class="top-badge">
                     <MdWatchLater className="watch-later-btn" />

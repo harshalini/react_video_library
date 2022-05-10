@@ -11,18 +11,18 @@ export const SingleVideoPage = () => {
         return video.find((mp4) => mp4._id === videoId);
     }
     const mp4 = getVideoDetails(video, videoId);
-
+    const { title, views, creator, description, genre } = mp4;
     return (
         <div>
             <Navbar />
             <Sidebar />
-            <h1 className="video-title">{mp4.title}</h1>
+            <h1 className="video-title">{title}</h1>
             <div className="iframe-container">
                 <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div className="video-actions">
                 <div>
-                    <p>Views: {mp4.views}</p>
+                    <p>Views: {views}</p>
                 </div>
                 <div className="video-btns">
                     <button><AiFillLike /><span>Like</span></button>
@@ -31,12 +31,12 @@ export const SingleVideoPage = () => {
                 </div>
             </div>
             <div className="creator-and-desc">
-                <p className="video-creator">From: {mp4.creator}</p>
-                <p className="video-desc">{mp4.description}</p>
+                <p className="video-creator">From: {creator}</p>
+                <p className="video-desc">{description}</p>
             </div>
             <div className="mustWatch-videos">
                 <h2>Must Watch</h2>
-                {video.filter((v) => v.genre === mp4.genre).map((v) => {
+                {video.filter((v) => v.genre === genre).map((v) => {
                     if (v !== mp4)
                         return <VideoCard {...v} />
                 })}
