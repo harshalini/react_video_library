@@ -58,10 +58,9 @@
     background-color: var(--light-pink);
     visibility: hidden;
 }
-
-.top-badge i {
-    font-size: 1.5rem;
+.watch-later-btn, .playlist-btn {
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .watch-later-btn {
@@ -120,4 +119,8 @@
 
 .chips-list input {
     display: none;
+}
+
+.video-link {
+    text-decoration: none;
 }
