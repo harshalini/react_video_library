@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
-import { AccLinks } from "../../components/allComp"
+import { AccLinks, Navbar } from "../../components/allComp"
 import { useAuth } from "../../contexts/authContext"
 
 export const SignUp = () => {
@@ -17,7 +17,7 @@ export const SignUp = () => {
     }, [])
     return (
         <div>
-            <SignUp />
+            <Navbar />
             <div className="account-page">
                     <div className="form-container">
                         <AccLinks />

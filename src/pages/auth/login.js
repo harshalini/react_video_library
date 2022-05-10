@@ -5,7 +5,7 @@ import { useAuth } from "../../contexts/authContext"
 export const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { UserLoginHandler, authUser} = useAuth()
+    const { UserLoginHandler, authUser } = useAuth()
     const [userLogIn, setUserLogIn] = useState({
         email: "",
         password: ""
@@ -15,7 +15,7 @@ export const Login = () => {
         password: "adarshBalika123"
     }
     useEffect(() => {
-        authUser.isUserLoggedIn? navigate(location?.state?.from?.pathname, { replace: true }): null
+        authUser.isUserLoggedIn ? navigate(location?.state?.from?.pathname, { replace: true }) : null
     }, [])
 
     return (
@@ -25,27 +25,28 @@ export const Login = () => {
                 <div className="account-container">
                     <div className="form-container">
                         <AccLinks />
-                        <form className="login-form" onSubmit={(e) =>  {e.preventDefault()
-                        UserLoginHandler(guestCredentials)
+                        <form className="login-form" onSubmit={(e) => {
+                            e.preventDefault()
+                            UserLoginHandler(guestCredentials)
                         }}>
                             <input type="text" placeholder="Email"
-                            onChange={(e) => setUserLogIn({...userLogIn, email: e.target.value})}
+                                onChange={(e) => setUserLogIn({ ...userLogIn, email: e.target.value })}
                             />
                             <input type="password" placeholder="Password"
-                             onChange={(e) => setUserLogIn({...userLogIn, password: e.target.value})}
+                                onChange={(e) => setUserLogIn({ ...userLogIn, password: e.target.value })}
                             />
                             <div className="pswd-rem">
                                 <input type="checkbox" id="check" />
                                 <label id="remember-check">Remember me</label>
                             </div>
                             <button type="button" className="account-btn"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                UserLoginHandler(userLogIn)
-                            }}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    UserLoginHandler(userLogIn)
+                                }}
                             >Login</button>
                             <a href="#" className="fr-pswd">Forgot password?</a>
-                            <button type="submit" className="account-btn"                               
+                            <button type="submit" className="account-btn"
                             >Login as Guest</button>
                         </form>
                     </div>
