@@ -14,7 +14,7 @@ export const Sidebar = () => {
         {
             page: "Watch later",
             icon: "film",
-            link: "/"
+            link: "/watchLater"
         },
         {
             page: "Liked videos",
