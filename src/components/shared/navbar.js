@@ -1,4 +1,7 @@
+import { NavLink } from "react-router-dom"
+import { useAuth } from "../../contexts/authContext"
 export const Navbar = () => {
+  const {authUser, logOutHandler} = useAuth();
   return (
     <div className="navbar">
       <div className="logo">
@@ -10,7 +13,7 @@ export const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <span className="login-btn"><a>login</a></span>
+          {authUser.isUserLoggedIn? <button className="logout-btn" onClick={logOutHandler}>logout</button> : <NavLink to="/login" className="page-links login-btn">Login</NavLink>}
           </li>
         </ul>
       </nav>
