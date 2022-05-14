@@ -28,12 +28,12 @@ const WatchLaterProvider = ({children}) => {
 
     const AddWatchLaterHandler = async(video) => {
         const response = await AddVideoToWatchLater(video)
-        videoDispatch({ type: "ADD_TO_WATCHLATER", payload: watchlater })
+        videoDispatch({ type: "ADD_TO_WATCHLATER", payload: response.data.watchlater })
     }
 
     const RemoveWatchLaterHandler = async(_id) => {
         const response = await RemoveVideoFromWatchLater(_id)
-        videoDispatch({ type: "ADD_TO_WATCHLATER", payload: watchlater })
+        videoDispatch({ type: "ADD_TO_WATCHLATER", payload: response.data.watchlater })
     }
 
     return <WatchLaterContext.Provider value={{videoState, AddWatchLaterHandler, RemoveWatchLaterHandler}}>
