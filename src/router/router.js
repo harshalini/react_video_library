@@ -1,4 +1,4 @@
-import { Home, VideoListing, SingleVideoPage, WatchLater, Login, SignUp } from "../pages";
+import { Home, VideoListing, SingleVideoPage, WatchLater, Login, SignUp, LikesPage } from "../pages";
 import { Routes, Route } from "react-router-dom";
 import { RequiresAuth } from "../pages/auth/requiresAuth";
 
@@ -13,6 +13,10 @@ export const AppRouter = () => {
             <Route path="/watchLater" element={
                 <RequiresAuth>
                     <WatchLater />
+                </RequiresAuth>} />
+            <Route path="/likes" element={
+                <RequiresAuth>
+                    <LikesPage />
                 </RequiresAuth>} />
         </Routes>
     )

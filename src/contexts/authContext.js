@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
-import { SignupServiceHandler } from "../services/authServices/signUpservice";
-import { LoginServiceHandler } from "../services/authServices/loginService";
+import { SignupServiceHandler, LoginServiceHandler } from "../services/allServices";
 import { useLocation, useNavigate } from "react-router-dom";
+
 const AuthContext = createContext()
 
 const AuthenticationProvider = ({ children }) => {

@@ -19,7 +19,7 @@ export const Sidebar = () => {
         {
             page: "Liked videos",
             icon: "heart",
-            link: "/"
+            link: "/likes"
         },
         {
             page: "History",

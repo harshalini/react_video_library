@@ -177,3 +177,13 @@ span.genre-name {
 .opaque-image:hover {
     opacity: 1;
 }
+
+.heading {
+    margin-top: 8rem;
+    margin-left: 17rem;
+    text-align: left;
+}
+.empty-heading {
+    margin-left: 17rem;
+    text-align: left;
+}

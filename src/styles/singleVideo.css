@@ -1,25 +1,18 @@
-.iframe-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-}
-
-.iframe-container iframe {
-    position: absolute;
-    left: 18rem;
-    width: 55%;
-    height: 55%;
-}
-
-.video-title {
-    margin: 7rem 0 1rem 18rem;
+.singleVideo-grid {
     display: flex;
-    justify-content: flex-start;
+    margin-left: 14rem;
+    margin-top: 6rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
+iframe {
+    width: 100%;
+}
+.singleVideo-div {
+    width: 55vw;
+}
 .video-actions {
-    margin: -24rem 0 0 18rem;
     display: flex;
     width: 55vw;
     justify-content: space-between;
@@ -27,6 +20,7 @@
     border-bottom: solid 1px var(--light-pink);
     padding-bottom: -1rem;
 }
+
 .video-actions p {
     font-size: 1.2rem;
     border: solid 3px var(--default-pink);
@@ -46,13 +40,13 @@
     padding: 0.5rem;
     border-radius: 10px;
     background: none;
+    cursor: pointer;
 }
 .video-actions button span {
     margin-left: 0.5rem;
 }
 
 .creator-and-desc {
-    margin-left: 18rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -66,8 +60,4 @@
 .video-desc {
     font-size: 1.2rem;
     margin-top: -1rem;
-}
-
-.mustWatch-videos {
-    margin: -49% 0 0 72vw;
 }
