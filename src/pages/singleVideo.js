@@ -29,7 +29,7 @@ export const SingleVideoPage = () => {
                             <p>Views: {views}</p>
                         </div>
                         <div className="video-btns">
-                            {liked.some((l) => l._id === _id) ?
+                            {liked.some(video => video._id === _id) ?
                                 <button
                                     onClick={() => RemoveLikeVideoHandler(_id)}>
                                     <AiFillLike style={{ color: "var(--default-pink)" }} />
@@ -41,7 +41,7 @@ export const SingleVideoPage = () => {
                                     <span>Like</span>
                                 </button>
                             }
-                            {watchLater.some(w => w._id === _id) ?
+                            {watchLater.some(video => video._id === _id) ?
                                 <button
                                     onClick={() => RemoveWatchLaterHandler(_id)}>
                                     <MdWatchLater style={{ color: "var(--default-pink)" }} />
@@ -63,8 +63,8 @@ export const SingleVideoPage = () => {
                 </div>
                 <div className="mustWatch-videos">
                     <h2>Must Watch</h2>
-                    {video.filter((v) => v.genre === genre).map((v) => {
-                        if (v !== mp4)
+                    {video.filter((video) => video.genre === genre).map((v) => {
+                        if (video !== mp4)
                             return <VideoCard {...v} />
                     })}
                 </div>

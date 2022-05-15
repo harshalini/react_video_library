@@ -10,7 +10,6 @@ const LikeProvider = ({ children }) => {
     const [videoState, videoDispatch] = useReducer(VideoReducer, {
         liked: []
     })
-    //const [likeVideo, setLikeVideo] = useState([]);
     const authToken = localStorage.getItem("authToken")
 
     useEffect(() => {
