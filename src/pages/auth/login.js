@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { AccLinks, Navbar } from "../../components/allComp"
-import { useAuth } from "../../contexts/authContext"
+import { useAuth } from "../../contexts/allContext"
 export const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
