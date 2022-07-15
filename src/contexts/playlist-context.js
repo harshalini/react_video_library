@@ -1,13 +1,12 @@
 import axios from "axios";
-import { createContext, useContext, useEffect } from "react";
-import { CreateNewPlaylist } from "../services/allServices";
-import { AddVideoToPlaylist } from "../services/allServices";
-import { RemoveVideoFromPlaylist } from "../services/allServices";
-import { GetEachPlaylist } from "../services/allServices";
-import { DeletePlaylist } from "../services/allServices";
+import { createContext, useContext, useEffect, useState, useReducer } from "react";
+import { CreateNewPlaylist, 
+    AddVideoToPlaylist, 
+    RemoveVideoFromPlaylist, 
+    GetEachPlaylist, 
+    DeletePlaylist } 
+    from "../services/allServices";
 import { VideoReducer } from "../reducers/videoReducer";
-import { useReducer } from "react";
-import { useState } from "react";
 
 const PlaylistContext = createContext()
 

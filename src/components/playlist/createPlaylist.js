@@ -1,32 +1,27 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { usePlaylist } from "../../contexts/playlist-context";
+import { ClickOutSideHandler } from "../../hooks/clickOutside";
 
 export const CreatePlaylist = (video) => {
-    const { videoState: { playList }, CreatePlaylistHandler, PlaylistVideoHandler, RemovePlaylistVideoHandler, showPlayListM} = usePlaylist()
+    const { videoState: { playList }, CreatePlaylistHandler, PlaylistVideoHandler, RemovePlaylistVideoHandler, showPlayListM } = usePlaylist()
     const [playlistContent, setPlaylistContent] = useState({
         title: "",
         description: ""
     })
-    const ref = useRef();
-    useEffect(() => {
-        document.addEventListener("mousedown", (event) => {
-            if(!ref.current?.contains(event.target))
-                showPlayListM(false)
-        })
-    })
+
+    const modelRef = ClickOutSideHandler(() => showPlayListM(false))
     return (
-        <div className="playlist-modal"
-        ref = {ref}
-        >
+        <div className="playlist-modal" ref={modelRef}>
             <div className="playlist-input">
                 <input
                     type="text" placeholder="title"
-                    onChange={(e) => setPlaylistContent({title: e.target.value })}
+                    onChange={(e) => setPlaylistContent({ title: e.target.value })}
                 />
                 <button type="button" onClick={() => {
                     CreatePlaylistHandler(playlistContent)
-                    console.log(CreatePlaylistHandler(playlistContent))
-                }}>Create</button>
+                    console.log(CreatePlaylistHandler(playlistContent))}}>
+                    Create
+                </button>
             </div>
             <div>
                 {playList.map(list => (
