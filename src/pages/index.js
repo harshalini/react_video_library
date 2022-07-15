@@ -5,3 +5,6 @@ export { WatchLater } from "./watchLater";
 export { Login } from "./auth/login";
 export { SignUp } from "./auth/signup";
 export { LikesPage } from "./likes";
+export { HistoryPage } from "./history";
+export { PlayListPage } from "./playlist";
+export { SinglePlaylistVideos } from "./singlePlaylistVideos";

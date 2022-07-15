@@ -1,0 +1,26 @@
+.playlist-modal {
+    height: 20rem;
+    color: black;
+    width: 20rem;
+    background: radial-gradient(var(--light-pink), black);
+    border-radius: 50%;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
+.blur {
+    opacity: 10%;
+}
+.playlist-input {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-input input {
+    width: 10rem;
+}

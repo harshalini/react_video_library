@@ -1,29 +1,43 @@
 import { useParams } from "react-router-dom"
-import { Sidebar, Navbar, VideoCard } from "../components/allComp";
+import { Sidebar, Navbar, VideoCard, CreatePlaylist } from "../components/allComp";
 import { AiFillLike } from "react-icons/ai";
 import { MdWatchLater, MdPlaylistAdd } from "react-icons/md";
-import { useLike, useWatchLater, useVideo } from "../contexts/allContext";
-
+import { useLike, useWatchLater, useVideo, usePlaylist } from "../contexts/allContext";
+import { useEffect, useRef } from "react";
 export const SingleVideoPage = () => {
     const { LikeVideoHandler, videoState: { liked }, RemoveLikeVideoHandler } = useLike()
     const { videoState: { watchLater }, AddWatchLaterHandler, RemoveWatchLaterHandler } = useWatchLater()
+    const { showPlayListM, playListM } = usePlaylist()
     const { videoId } = useParams();
     const { video } = useVideo();
 
-    function getVideoDetails(video, videoId) {
+    const ref = useRef();
+    /*useEffect(() => {
+        document.addEventListener("mousedown", (event) => {
+            if(!ref.current?.contains(event.target))
+                showPlayListM(false)
+        })
+    })*/
+    function getVideoDetails(video, videoId) { 
         return video.find((mp4) => mp4._id === videoId);
     }
     const mp4 = getVideoDetails(video, videoId);
     const { title, views, creator, description, genre, _id } = mp4;
     
+    const getClassName = () => {
+        if(playListM)
+            return "blur"
+    }
     return (
         <div>
+        <div className={`single-video-page ${getClassName()}`}>
             <Navbar />
             <Sidebar />
             <div className="singleVideo-grid">
                 <div className="singleVideo-div">
                     <h1 className="video-title">{title}</h1>
-                    <iframe width="1460" height="470" src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe 
+                    width="1460" height="470" src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     <div className="video-actions">
                         <div>
                             <p>Views: {views}</p>
@@ -53,7 +67,12 @@ export const SingleVideoPage = () => {
                                     <span>Watch Later</span>
                                 </button>
                             }
-                            <button><MdPlaylistAdd /><span>Add to playlist</span></button>
+                            <button onClick={() => {
+                                showPlayListM(pl => !pl),
+                                getClassName()
+                                }}>
+                                <MdPlaylistAdd /><span>Add to playlist</span>
+                            </button>
                         </div>
                     </div>
                     <div className="creator-and-desc">
@@ -69,6 +88,9 @@ export const SingleVideoPage = () => {
                     })}
                 </div>
             </div>
+        </div>
+        {playListM && <CreatePlaylist {...mp4}
+        />}
         </div>
     )
 }
