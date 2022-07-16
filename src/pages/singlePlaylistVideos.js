@@ -1,21 +1,22 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { usePlaylist } from "../contexts/playlist-context";
-import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai"
 import { Navbar, Sidebar } from "../components/allComp";
 export const SinglePlaylistVideos = () => {
     const { playlistId } = useParams();
     const {
-        videoState: { playList }, RemovePlaylistVideoHandler
+        videoState: { playList }, RemovePlaylistVideoHandler, DeletePlaylistHandler
     } = usePlaylist();
 
     const getPlaylist = playList.find((list) => list._id === playlistId)
+    const { title, description } = getPlaylist
     return (
         <div>
             <Navbar />
             <Sidebar />
             <h1 className="heading">Your playlists</h1>
-            <h2>Playlists -- {getPlaylist.title}</h2>
+            <h2 className="empty-heading">{title}</h2>
+            <p>{description}</p>
             <div className="videos-grid">
                 {getPlaylist.videos.map(({ _id, title, creator }) => {
                     return (

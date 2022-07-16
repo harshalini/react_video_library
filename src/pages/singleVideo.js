@@ -3,7 +3,8 @@ import { Sidebar, Navbar, VideoCard, CreatePlaylist } from "../components/allCom
 import { AiFillLike } from "react-icons/ai";
 import { MdWatchLater, MdPlaylistAdd } from "react-icons/md";
 import { useLike, useWatchLater, useVideo, usePlaylist } from "../contexts/allContext";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+
 export const SingleVideoPage = () => {
     const { LikeVideoHandler, videoState: { liked }, RemoveLikeVideoHandler } = useLike()
     const { videoState: { watchLater }, AddWatchLaterHandler, RemoveWatchLaterHandler } = useWatchLater()
@@ -11,19 +12,11 @@ export const SingleVideoPage = () => {
     const { videoId } = useParams();
     const { video } = useVideo();
 
-    const ref = useRef();
-    /*useEffect(() => {
-        document.addEventListener("mousedown", (event) => {
-            if(!ref.current?.contains(event.target))
-                showPlayListM(false)
-        })
-    })*/
     function getVideoDetails(video, videoId) { 
         return video.find((mp4) => mp4._id === videoId);
     }
     const mp4 = getVideoDetails(video, videoId);
-    const { title, views, creator, description, genre, _id } = mp4;
-    
+    const { title, views, creator, description, genre, _id } = mp4 || {};
     const getClassName = () => {
         if(playListM)
             return "blur"

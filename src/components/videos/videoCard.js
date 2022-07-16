@@ -1,41 +1,35 @@
 import { Link } from "react-router-dom";
 import { AiFillLike } from "react-icons/ai";
 import { MdWatchLater, MdPlaylistAdd } from "react-icons/md";
-import { useLike, useWatchLater, useHistory, usePlaylist } from "../../contexts/allContext";
+import { useLike, useWatchLater, useHistory, usePlaylist, useVideo } from "../../contexts/allContext";
 import { CreatePlaylist } from "../playlist/createPlaylist";
 import { useState } from "react"
-export const VideoCard = (video) => {
+export const VideoCard = (v) => {
     const { LikeVideoHandler, videoState: { liked }, RemoveLikeVideoHandler } = useLike()
     const { videoState: { watchLater }, AddWatchLaterHandler, RemoveWatchLaterHandler } = useWatchLater()
     const { HistoryVideoHandler } = useHistory()
-    const { _id, title, creator, views } = video;
+    const { _id, title, creator, views } = v;
     const { playListM, showPlayListM } = usePlaylist()
+    const { video } = useVideo()
     const modalShowHandler = () => {
-        showPlayListM(true)
-        const body = document.querySelector("body");
-                    
+        showPlayListM(true)        
     }
     return (
         <div className="ui-component card card-with-badge">
             <Link to={`/singleVideo/${_id}`} className="video-link">
                 <div className="card-image"
-                onClick={() => HistoryVideoHandler(video)}
+                onClick={() => HistoryVideoHandler(v)}
                 >
                     <img src={`https://img.youtube.com/vi/${_id}/hqdefault.jpg`} alt="video-thumbnail" />
                 </div>
             </Link>
-            <div className="top-badge">
                 {watchLater.some(w => w._id === _id) ?
                     <MdWatchLater className="watch-later-btn"
                         style={{ color: "var( --default-pink)" }}
                         onClick={() => RemoveWatchLaterHandler(_id)}
                     /> :
                     <MdWatchLater className="watch-later-btn"
-                        onClick={() => AddWatchLaterHandler(video)} />}
-                <MdPlaylistAdd className="playlist-btn" 
-                onClick={modalShowHandler}
-                />
-            </div>
+                        onClick={() => AddWatchLaterHandler(v)} />}
             <div className="card-text">
                 <span className="card-title">{title}</span>
                 <p className="creator-name">{creator}</p>
@@ -47,7 +41,7 @@ export const VideoCard = (video) => {
                             onClick={() => { RemoveLikeVideoHandler(_id) }} />
                         :
                         <AiFillLike className="like-btn"
-                            onClick={() => { LikeVideoHandler(video) }} />
+                            onClick={() => { LikeVideoHandler(v) }} />
                     }
                 </div>
             </div>

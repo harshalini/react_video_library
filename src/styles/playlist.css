@@ -1,20 +1,25 @@
 .playlist-modal {
-    height: 20rem;
     color: black;
     width: 20rem;
-    background: radial-gradient(var(--light-pink), black);
-    border-radius: 50%;
+    background: radial-gradient(var(--light-pink), var(--black));
     margin: auto;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
+    height: fit-content;
+    padding-bottom: 1.5rem;
 }
 .blur {
     opacity: 20%;
 }
-.playlist-input {
-    margin-top: 5rem;
+.playlist-heading {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.playlist-input { 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,4 +28,55 @@
 
 .playlist-input input {
     width: 10rem;
+}
+.close-btn {
+    position: absolute;
+    margin-left: 7rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.create-btn {
+    padding: 0.5rem;
+    background-color: var(--black);
+    border: solid 2px var(--default-pink);
+    color: var(--default-pink);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.playlist-lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.playlist-name{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.playlist-name input {
+    margin-left: -7rem;
+    cursor: pointer;
+}
+.playlist-name label {
+    margin-left: -9rem;
+    font-size: 1.2rem;
+    width: 12rem;
+    text-align: left;
+    font-weight: 500;
+    cursor: pointer;
+}
+.delete-icon {
+    color: var(--white);
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+.delete-icon:hover {
+    color: var(--default-pink);
 }

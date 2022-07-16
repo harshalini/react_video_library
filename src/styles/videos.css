@@ -54,24 +54,28 @@
 }
 
 .top-badge {
-    margin: -13rem 0 0 13.5rem;
-    background-color: var(--light-pink);
-    visibility: hidden;
+    border-radius: 50%;
+    
 }
 .watch-later-btn, .playlist-btn {
+    margin-top: -3rem;
+    margin: -6.2rem 0 0 15rem;
     font-weight: 700;
     font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--light-pink);
+    color: var(--white);
+    position: absolute;
+    visibility: hidden;
 }
 
-.watch-later-btn {
-    margin-right: 0.5rem;
-}
 
 .card-with-badge:hover {
     box-shadow: 0 5px 10px var(--default-pink), 0 5px 12px var(--default-pink)
 }
 
-.card-with-badge:hover .top-badge {
+.card-with-badge:hover .watch-later-btn {
     visibility: visible;
 }
 
