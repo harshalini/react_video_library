@@ -46,7 +46,6 @@ export const CreatePlaylist = (video) => {
                             onChange={(e) => {
                                 if (e.target.checked) {
                                     PlaylistVideoHandler(video, list._id);
-                                    console.log(PlaylistVideoHandler(video, list._id))
                                 } else {
                                     RemovePlaylistVideoHandler(list._id, video._id);
                                 }

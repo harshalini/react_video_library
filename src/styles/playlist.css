@@ -1,5 +1,5 @@
 .playlist-modal {
-    color: black;
+    color: var(--black);
     width: 20rem;
     background: radial-gradient(var(--light-pink), var(--black));
     margin: auto;
@@ -16,8 +16,7 @@
 .playlist-heading {
     font-weight: 700;
     font-size: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0
 }
 .playlist-input { 
     display: flex;
@@ -31,13 +30,12 @@
 }
 .close-btn {
     position: absolute;
-    margin-left: 7rem;
     padding: 0.5rem;
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
-    margin-top: 0.5rem;
     cursor: pointer;
+    margin: 0.5rem 0 0 7rem;
 }
 
 .create-btn {
@@ -79,4 +77,30 @@
 }
 .delete-icon:hover {
     color: var(--default-pink);
+}
+
+.each-playlist {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-pink);
+    color: var(--black);
+    width: fit-content;
+    padding-right: 1rem;
+}
+.each-playlist .empty-heading {
+    margin-right: 1rem;
+}
+.pl-delete {
+    margin-top: 0.3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.playlist-desc {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--light-pink);
+    margin: 0.5rem 0 0 -29rem;
+}
+.hidden-btn {
+    visibility: hidden;
 }

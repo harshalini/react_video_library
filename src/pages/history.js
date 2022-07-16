@@ -7,7 +7,7 @@ export const HistoryPage = () => {
         <div>
             <Navbar />
             <Sidebar />
-            <h1 className="heading">Liked videos</h1>
+            <h1 className="heading">Watch History</h1>
             {historyVid.length !== 0 ?
                 <div className="videos-grid">
                     {historyVid.map((video) => (

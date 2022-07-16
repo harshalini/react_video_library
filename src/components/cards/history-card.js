@@ -15,6 +15,7 @@ export const HistoryCard = (video) => {
                 <span className="card-title">{title}</span>
                 <p className="creator-name">{creator}</p>
                 <div className="price video-stats">
+                <p style={{ color: "var(--white)" }}>Views: {views}</p>
                     <AiFillDelete className="like-btn" onClick={() => RemoveHistoryVideoHandler(_id)}/>
                 </div>
             </div>

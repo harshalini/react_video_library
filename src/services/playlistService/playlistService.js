@@ -10,7 +10,6 @@ const CreateNewPlaylist = async (data) => {
                 headers: { authorization: authToken }
             }
         )
-        console.log(res)
         return res;
     }
     catch (error) {
