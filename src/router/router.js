@@ -1,4 +1,4 @@
-import { Home, VideoListing, SingleVideoPage, WatchLater, Login, SignUp, LikesPage } from "../pages";
+import { Home, VideoListing, SingleVideoPage, WatchLater, Login, SignUp, LikesPage, HistoryPage, PlayListPage, SinglePlaylistVideos } from "../pages";
 import { Routes, Route } from "react-router-dom";
 import { RequiresAuth } from "../pages/auth/requiresAuth";
 
@@ -18,6 +18,21 @@ export const AppRouter = () => {
                 <RequiresAuth>
                     <LikesPage />
                 </RequiresAuth>} />
+            <Route path="/history" element={
+                <RequiresAuth>
+                    <HistoryPage />
+                </RequiresAuth>} />
+            <Route path="/playlist" element={
+                <RequiresAuth>
+                    <PlayListPage />
+                </RequiresAuth>} />
+            <Route path="/playlist/:playlistId"
+            element = {
+                <RequiresAuth>
+                    <SinglePlaylistVideos />
+                </RequiresAuth>
+            } />
+            
         </Routes>
     )
 }

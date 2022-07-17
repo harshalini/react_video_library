@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useState } from "react"
 import { AccLinks, Navbar } from "../../components/allComp"
 import { useAuth } from "../../contexts/allContext"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const Login = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const { UserLoginHandler, authUser } = useAuth()
+    const { UserLoginHandler } = useAuth()
     const [userLogIn, setUserLogIn] = useState({
         email: "",
         password: ""
@@ -14,9 +14,6 @@ export const Login = () => {
         email: "adarshbalika@gmail.com",
         password: "adarshBalika123"
     }
-    useEffect(() => {
-        authUser.isUserLoggedIn ? navigate(location?.state?.from?.pathname, { replace: true }) : null
-    }, [])
 
     return (
         <div>
@@ -28,7 +25,9 @@ export const Login = () => {
                         <form className="login-form" onSubmit={(e) => {
                             e.preventDefault()
                             UserLoginHandler(guestCredentials)
+                            toast.success("Logged in successfully")
                         }}>
+                            <ToastContainer />
                             <input type="text" placeholder="Email"
                                 onChange={(e) => setUserLogIn({ ...userLogIn, email: e.target.value })}
                             />
@@ -43,6 +42,7 @@ export const Login = () => {
                                 onClick={(e) => {
                                     e.preventDefault();
                                     UserLoginHandler(userLogIn)
+                                    toast.success("Logged in successfully")
                                 }}
                             >Login</button>
                             <a href="#" className="fr-pswd">Forgot password?</a>

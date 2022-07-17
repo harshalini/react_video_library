@@ -1,0 +1,117 @@
+.playlist-modal {
+    color: var(--black);
+    width: 20rem;
+    background: radial-gradient(var(--light-pink), var(--black));
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    height: fit-content;
+    padding-bottom: 1.5rem;
+}
+.blur {
+    opacity: 20%;
+}
+.playlist-heading {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 1rem 0
+}
+.playlist-input { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-input input {
+    width: 10rem;
+}
+.close-btn {
+    position: absolute;
+    padding: 0.5rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    margin: 0.5rem 0 0 7rem;
+}
+
+.create-btn {
+    padding: 0.5rem;
+    background-color: var(--black);
+    border: solid 2px var(--default-pink);
+    color: var(--default-pink);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.playlist-lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.playlist-name{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.playlist-name input {
+    margin-left: -7rem;
+    cursor: pointer;
+}
+.playlist-name label {
+    margin-left: -9rem;
+    font-size: 1.2rem;
+    width: 12rem;
+    text-align: left;
+    font-weight: 500;
+    cursor: pointer;
+}
+.delete-icon {
+    color: var(--white);
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+.delete-icon:hover {
+    color: var(--default-pink);
+}
+
+.each-playlist {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-pink);
+    color: var(--black);
+    width: fit-content;
+    padding-right: 1rem;
+}
+.each-playlist .empty-heading {
+    margin-right: 1rem;
+}
+.pl-delete {
+    margin-top: 0.3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.playlist-desc {
+    width: fit-content;
+    cursor: default;
+}
+.hidden-btn {
+    visibility: hidden;
+}
+.history-del {
+    background: none;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 16rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    border: solid 2px var(--light-pink);
+    border-radius: 1rem;
+    cursor: pointer;
+}

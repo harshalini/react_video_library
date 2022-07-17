@@ -10,7 +10,9 @@ import {
   FilterProvider,
   AuthenticationProvider,
   LikeProvider,
-  WatchLaterProvider
+  WatchLaterProvider,
+  HistoryProvider,
+  PlaylistProvider
 }
   from "./contexts/allContext"
 
@@ -22,15 +24,19 @@ ReactDOM.render(
     <Router>
       <AuthenticationProvider>
         <FilterProvider>
-          <WatchLaterProvider>
-            <LikeProvider>
-              <VideosProvider>
-                <CategoriesProvider>
-                  <App />
-                </CategoriesProvider>
-              </VideosProvider>
-            </LikeProvider>
-          </WatchLaterProvider>
+          <PlaylistProvider>
+            <HistoryProvider>
+              <WatchLaterProvider>
+                <LikeProvider>
+                  <VideosProvider>
+                    <CategoriesProvider>
+                      <App />
+                    </CategoriesProvider>
+                  </VideosProvider>
+                </LikeProvider>
+              </WatchLaterProvider>
+            </HistoryProvider>
+          </PlaylistProvider>
         </FilterProvider>
       </AuthenticationProvider>
     </Router>

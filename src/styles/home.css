@@ -39,7 +39,7 @@ nav ul li {
     font-family: 'Federo', sans-serif;
     color: var(--default-pink);
     font-size: 3.5rem;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
     border: solid 7px var(--default-pink);
     text-align: center;
     display: flex;
@@ -49,8 +49,13 @@ nav ul li {
     background-color: var(--black);
     margin: 0.5rem auto 0 2rem;
     cursor: pointer;
+    border-radius: 1rem;
 }
-
+.home-link {
+    color: var(--default-pink);
+    text-decoration: none;
+    cursor: pointer;
+}
 .login-btn, .logout-btn {
     background-color: var(--default-pink);
     color: var(--white);

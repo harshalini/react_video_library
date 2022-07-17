@@ -3,4 +3,6 @@ export { VideosProvider, useVideo } from "./videolist-context";
 export { FilterProvider, useFilteredData } from "./filter-context";
 export { LikeProvider, useLike } from "./likeContext";
 export { WatchLaterProvider, useWatchLater } from "./watchLater-context";
+export { HistoryProvider, useHistory } from "./history-context";
+export { PlaylistProvider, usePlaylist } from "./playlist-context";
 export { AuthenticationProvider, useAuth } from "./authContext";
