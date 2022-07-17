@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom"
 import { useAuth } from "../../contexts/allContext"
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const Navbar = () => {
-  const {authUser, logOutHandler} = useAuth();
+  const { authUser, logOutHandler } = useAuth();
   return (
     <div className="navbar">
       <div className="logo">
@@ -14,7 +17,14 @@ export const Navbar = () => {
       <nav>
         <ul>
           <li>
-          {authUser.isUserLoggedIn? <button className="logout-btn" onClick={logOutHandler}>logout</button> : <NavLink to="/login" className="page-links login-btn">Login</NavLink>}
+            {authUser.isUserLoggedIn ? <button className="logout-btn"
+              onClick={() => {
+                logOutHandler,
+                  toast.success("Logged out successfully")
+              }}>
+              logout
+            </button> :
+              <NavLink to="/login" className="page-links login-btn">Login</NavLink>}
           </li>
         </ul>
       </nav>

@@ -1,10 +1,9 @@
 import { useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
 import { AccLinks, Navbar } from "../../components/allComp"
 import { useAuth } from "../../contexts/allContext"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-  
+
 export const Login = () => {
     const { UserLoginHandler } = useAuth()
     const [userLogIn, setUserLogIn] = useState({
@@ -28,7 +27,7 @@ export const Login = () => {
                             UserLoginHandler(guestCredentials)
                             toast.success("Logged in successfully")
                         }}>
-                             <ToastContainer />
+                            <ToastContainer />
                             <input type="text" placeholder="Email"
                                 onChange={(e) => setUserLogIn({ ...userLogIn, email: e.target.value })}
                             />
