@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { v4 as uuid } from "uuid"
 export const Sidebar = () => {
     const sidebarPages = [
@@ -39,17 +39,23 @@ export const Sidebar = () => {
             link: "/playlist"
         }
     ]
+    const activeStyle = ({isActive}) => ({
+        color: isActive? "var(--default-pink)": "none",
+      })
+    
     return (
         <div className="flex-div">
             <aside className="lib-sidebar">
                 <ul>
                     {sidebarPages.map(({ page, icon, link, _id }) => (
-                        <Link to={`${link}`} key={_id}>
-                            <li>
+                        <li key={_id}>
+                        <NavLink 
+                        style={activeStyle}
+                        to={`${link}`}>
                                 <i className={`sidebar-icon fas fa-${icon}`}></i>
                                 <span>{page}</span>
-                            </li>
-                        </Link>
+                        </NavLink>
+                        </li>
                     ))}
                 </ul>
             </aside>

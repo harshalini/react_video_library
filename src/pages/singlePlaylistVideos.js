@@ -15,8 +15,9 @@ export const SinglePlaylistVideos = () => {
     const { title, description } = getPlaylist || {};
     const [showDeleteBtn, setShowDeleteBtn] = useState(true)
     const navigate = useNavigate()
+
     const getClassName = () => {
-        if(showDeleteBtn === false)
+        if (showDeleteBtn === false)
             return "hidden-btn"
     }
     return (
@@ -27,48 +28,50 @@ export const SinglePlaylistVideos = () => {
             <div className="each-playlist">
                 <h2 className="empty-heading playlist-title">{title}</h2>
                 <AiFillDelete className={`delete-icon pl-delete ${getClassName()}`}
-                onClick={() => {
-                    DeletePlaylistHandler(playlistId)
-                    setShowDeleteBtn(false)
-                    navigate("/playlist")
-                }} 
+                    onClick={() => {
+                        DeletePlaylistHandler(playlistId)
+                        setShowDeleteBtn(false)
+                        navigate("/playlist")
+                    }}
                 />
             </div>
-            <p className="playlist-desc">{description}</p>
-            <div className="videos-grid">
-                {getPlaylist !== undefined ? getPlaylist.videos.map(
-                    (v) => {
-                        const { _id, title, creator, views } = v
-                    return (
-                        <div className="ui-component card card-with-badge">
-            <Link to={`/singleVideo/${_id}`} className="video-link">
-                <div className="card-image"
-                onClick={() => HistoryVideoHandler(v)}
-                >
-                    <img src={`https://img.youtube.com/vi/${_id}/hqdefault.jpg`} alt="video-thumbnail" />
-                </div>
-            </Link>
-                {watchLater.some(w => w._id === _id) ?
-                    <MdWatchLater className="watch-later-btn"
-                        style={{ color: "var( --default-pink)" }}
-                        onClick={() => RemoveWatchLaterHandler(_id)}
-                    /> :
-                    <MdWatchLater className="watch-later-btn"
-                        onClick={() => AddWatchLaterHandler(v)} />}
-            <div className="card-text">
-                <span className="card-title">{title}</span>
-                <p className="creator-name">{creator}</p>
-                <div className="price video-stats">
-                    <p style={{ color: "var(--white)" }}>Views: {views}</p>
-                        <AiFillDelete className="like-btn"
-                            onClick={() => RemovePlaylistVideoHandler(playlistId, _id)} />
-                    
-                </div>
-            </div>
-        </div>
-                    )
-                }) : null}
-            </div>
+            <p className="history-del playlist-desc">{description}</p>
+            {getPlaylist !== undefined && getPlaylist.videos.length !== 0 ?
+                <div className="videos-grid">
+                    {getPlaylist.videos.map(
+                        (v) => {
+                            const { _id, title, creator, views } = v
+                            return (
+                                <div className="ui-component card card-with-badge">
+                                    <Link to={`/singleVideo/${_id}`} className="video-link">
+                                        <div className="card-image"
+                                            onClick={() => HistoryVideoHandler(v)}
+                                        >
+                                            <img src={`https://img.youtube.com/vi/${_id}/hqdefault.jpg`} alt="video-thumbnail" />
+                                        </div>
+                                    </Link>
+                                    {watchLater.some(w => w._id === _id) ?
+                                        <MdWatchLater className="watch-later-btn"
+                                            style={{ color: "var( --default-pink)" }}
+                                            onClick={() => RemoveWatchLaterHandler(_id)}
+                                        /> :
+                                        <MdWatchLater className="watch-later-btn"
+                                            onClick={() => AddWatchLaterHandler(v)} />}
+                                    <div className="card-text">
+                                        <span className="card-title">{title}</span>
+                                        <p className="creator-name">{creator}</p>
+                                        <div className="price video-stats">
+                                            <p style={{ color: "var(--white)" }}>Views: {views}</p>
+                                            <AiFillDelete className="like-btn"
+                                                onClick={() => RemovePlaylistVideoHandler(playlistId, _id)} />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                </div> : <h2 className="Empty-heading">There are no videos in this playlist</h2>
+            }
         </div>
     )
 }

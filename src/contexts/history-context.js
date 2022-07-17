@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect } from "react";
-import { AddVideoToHistory, RemoveVideoFromHistory } from "../services/allServices";
+import { AddVideoToHistory, RemoveVideoFromHistory, ClearAllHistory } from "../services/allServices";
 import { VideoReducer } from "../reducers/videoReducer";
 import { useReducer } from "react";
 
@@ -37,7 +37,12 @@ const HistoryProvider = ({ children }) => {
         videoDispatch({type: "ADD_TO_HISTORY", payload: response.data.history})
     }
 
-    return <HistoryContext.Provider value = {{videoState, HistoryVideoHandler, RemoveHistoryVideoHandler}}>
+    const DeleteAllHistory = async() => {
+        const response = await ClearAllHistory();
+        console.log(response)
+    }
+
+    return <HistoryContext.Provider value = {{videoState, HistoryVideoHandler, RemoveHistoryVideoHandler, DeleteAllHistory}}>
         {children}
     </HistoryContext.Provider>
 }

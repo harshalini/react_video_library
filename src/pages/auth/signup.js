@@ -1,20 +1,17 @@
-import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useState } from "react"
 import { AccLinks, Navbar } from "../../components/allComp"
 import { useAuth } from "../../contexts/allContext"
 
 export const SignUp = () => {
-    const { UserSignUpHandler, authUser } = useAuth()
-    const location = useLocation()
+    const { UserSignUpHandler } = useAuth()
+    
     const [userSignUp, setUserSignUp] = useState({
         firstName: "",
         lastName: "",
         email: "",
         password: ""
     })
-    useEffect(() => {
-        authUser.isUserLoggedIn? navigate(location?.state?.from?.pathname, { replace: true }): null
-    }, [])
+    
     return (
         <div>
             <Navbar />

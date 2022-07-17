@@ -19,7 +19,7 @@ const AuthenticationProvider = ({ children }) => {
             token: data.encodedToken,
             isUserLoggedIn: true,
         })
-        navigate(location?.state?.from?.pathname, { replace: true })
+        navigate("/videoListing")
     }
 
     const UserLoginHandler = async ({ email, password }) => {

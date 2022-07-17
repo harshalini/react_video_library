@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom"
 import { useAuth } from "../../contexts/allContext"
+import { Link } from "react-router-dom";
 export const Navbar = () => {
   const {authUser, logOutHandler} = useAuth();
   return (
     <div className="navbar">
       <div className="logo">
-        <a>vivir</a>
+        <Link to="/" className="home-link">vivir</Link>
       </div>
       <div className="search-input">
         <input type="text" placeholder="Watch something" className="search-bar"></input>
