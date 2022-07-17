@@ -11,7 +11,6 @@ const AddVideoToLiked = async (video) => {
             {
                 headers: { authorization: authToken }
             })
-        toast.success("Added video to liked")
         return res;
     }
     catch (error) {

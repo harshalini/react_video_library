@@ -1,19 +1,14 @@
 import { Link } from "react-router-dom";
 import { AiFillLike } from "react-icons/ai";
-import { MdWatchLater, MdPlaylistAdd } from "react-icons/md";
-import { useLike, useWatchLater, useHistory, usePlaylist, useVideo } from "../../contexts/allContext";
-import { CreatePlaylist } from "../playlist/createPlaylist";
-import { useState } from "react"
+import { MdWatchLater } from "react-icons/md";
+import { useLike, useWatchLater, useHistory } from "../../contexts/allContext";
+
 export const VideoCard = (v) => {
     const { LikeVideoHandler, videoState: { liked }, RemoveLikeVideoHandler } = useLike()
     const { videoState: { watchLater }, AddWatchLaterHandler, RemoveWatchLaterHandler } = useWatchLater()
     const { HistoryVideoHandler } = useHistory()
     const { _id, title, creator, views } = v;
-    const { playListM, showPlayListM } = usePlaylist()
-    const { video } = useVideo()
-    const modalShowHandler = () => {
-        showPlayListM(true)        
-    }
+    
     return (
         <div className="ui-component card card-with-badge">
             <Link to={`/singleVideo/${_id}`} className="video-link">
@@ -38,10 +33,10 @@ export const VideoCard = (v) => {
                     {liked.some((l) => l._id === _id) ?
                         <AiFillLike className="like-btn"
                             style={{ color: "var( --default-pink)" }}
-                            onClick={() => { RemoveLikeVideoHandler(_id) }} />
+                            onClick={() => RemoveLikeVideoHandler(_id) } />
                         :
                         <AiFillLike className="like-btn"
-                            onClick={() => { LikeVideoHandler(v) }} />
+                            onClick={() => LikeVideoHandler(v) } />
                     }
                 </div>
             </div>
