@@ -1,7 +1,8 @@
 import { createContext, useContext, useState } from "react";
 import { SignupServiceHandler, LoginServiceHandler } from "../services/allServices";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AuthContext = createContext()
 
 const AuthenticationProvider = ({ children }) => {
@@ -38,6 +39,7 @@ const AuthenticationProvider = ({ children }) => {
             isUserLoggedIn: false
         })
         localStorage.removeItem("authToken")
+        toast.success("Logged out successfully")
     }
     return <AuthContext.Provider
         value={{ authUser, setAuthUser, UserLoginHandler, UserSignUpHandler, logOutHandler }}>
