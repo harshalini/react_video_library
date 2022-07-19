@@ -1,20 +1,22 @@
 import { useVideo } from "../../contexts/allContext";
-import { GetFilteredVideos } from "../../filter-utils/genreFilter-util";
+import { GetFilteredVideos, GetSearchedVideos } from "../../utils";
 import { VideoCard } from "../allComp";
-import { usePlaylist } from "../../contexts/playlist-context";
 
 export const VideoList = () => {
-    const { playListM } = usePlaylist()
     const { video } = useVideo();
     const compose = (...getVideo) => (video) => getVideo.reduce((data, getVideo) => getVideo(data), video)
-    const filteredVideoList = compose(GetFilteredVideos)(video)
+    const filteredVideoList = compose(GetFilteredVideos, GetSearchedVideos)(video)
     return (
-        <div className="videos-grid">
-            {filteredVideoList.map((video) => (
-                <div key={video._id}>
-                <VideoCard {...video} />
-                </div>
-            ))}
+        <div>
+            {filteredVideoList?.length !== 0 ?
+                <div className="videos-grid">
+                    {filteredVideoList.map((video) => (
+                        <div key={video._id}>
+                            <VideoCard {...video} />
+                        </div>
+                    ))}
+                </div> : <h2 className="empty-heading">No video found, try different keyword</h2>
+            }
         </div>
     )
 }

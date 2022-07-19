@@ -12,7 +12,8 @@ import {
   LikeProvider,
   WatchLaterProvider,
   HistoryProvider,
-  PlaylistProvider
+  PlaylistProvider,
+  SearchProvider
 }
   from "./contexts/allContext"
 
@@ -23,21 +24,23 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <AuthenticationProvider>
-        <FilterProvider>
-          <PlaylistProvider>
-            <HistoryProvider>
-              <WatchLaterProvider>
-                <LikeProvider>
-                  <VideosProvider>
-                    <CategoriesProvider>
-                      <App />
-                    </CategoriesProvider>
-                  </VideosProvider>
-                </LikeProvider>
-              </WatchLaterProvider>
-            </HistoryProvider>
-          </PlaylistProvider>
-        </FilterProvider>
+        <SearchProvider>
+          <FilterProvider>
+            <PlaylistProvider>
+              <HistoryProvider>
+                <WatchLaterProvider>
+                  <LikeProvider>
+                    <VideosProvider>
+                      <CategoriesProvider>
+                        <App />
+                      </CategoriesProvider>
+                    </VideosProvider>
+                  </LikeProvider>
+                </WatchLaterProvider>
+              </HistoryProvider>
+            </PlaylistProvider>
+          </FilterProvider>
+        </SearchProvider>
       </AuthenticationProvider>
     </Router>
   </React.StrictMode>,
