@@ -15,7 +15,7 @@ export const HistoryPage = () => {
             }
             {historyVideoList?.length !== 0 ?
                 <div className="videos-grid">
-                    {historyVideoList?.map((video) => (
+                    {historyVideoList?.reverse().map((video) => (
                         <HistoryCard {...video} />
                     ))}
                 </div>
