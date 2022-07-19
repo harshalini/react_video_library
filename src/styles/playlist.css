@@ -11,7 +11,7 @@
     padding-bottom: 1.5rem;
 }
 .blur {
-    opacity: 20%;
+    opacity: 0.2;
 }
 .playlist-heading {
     font-weight: 700;
