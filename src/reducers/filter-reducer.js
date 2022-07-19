@@ -10,6 +10,8 @@ export const FilterReducer = (state, action) => {
             return { ...state, videoGenre: state.videoGenre.filter((videoCat) => videoCat !== "Classical") }
         case "REMOVE-POP":
             return { ...state, videoGenre: state.videoGenre.filter((videoCat) => videoCat !== "Pop") }
+        case "SEARCH_VID":
+            return {...state, searchVal: action.payload}
         case "ALL":
             return {
                 videoGenre: ""
