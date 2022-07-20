@@ -3,6 +3,7 @@ import { useWatchLater } from "../contexts/watchLater-context"
 import { VideoCard } from "../components/allComp"
 import { ComposeFun } from "../utils"
 export const WatchLater = () => {
+    document.title = "Vivir Videos | Watch Later"
     const { videoState: { watchLater } } = useWatchLater()
     const watchVideoList = ComposeFun(watchLater);
     return (

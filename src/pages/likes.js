@@ -3,6 +3,7 @@ import { useLike } from "../contexts/allContext";
 import { ComposeFun } from "../utils";
 
 export const LikesPage = () => {
+    document.title = "Vivir Videos | Liked Videos"
     const { videoState: { liked } } = useLike();
     const likedVideoList = ComposeFun(liked);
     

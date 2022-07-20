@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const SignUp = () => {
+    document.title = `Vivir Videos | Signup`
     const { UserSignUpHandler } = useAuth()
 
     const [userSignUp, setUserSignUp] = useState({

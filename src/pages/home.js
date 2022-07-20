@@ -1,6 +1,7 @@
 import { Navbar, Sidebar, Genres } from "../components/allComp"
 import { Link } from "react-router-dom"
 export const Home = () => {
+    document.title = "Vivir Videos | Home"
     return (
         <div>
             <Navbar />

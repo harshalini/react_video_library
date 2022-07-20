@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Login = () => {
+    document.title = `Vivir Videos | Login`
     const { UserLoginHandler } = useAuth()
     const [userLogIn, setUserLogIn] = useState({
         email: "",

@@ -5,6 +5,7 @@ import { Navbar, Sidebar } from "../components/allComp";
 import { useState } from "react";
 import { MdWatchLater } from "react-icons/md";
 export const SinglePlaylistVideos = () => {
+    document.title = "Vivir Videos | Your Playlist"
     const { playlistId } = useParams();
     const {
         videoState: { playList }, RemovePlaylistVideoHandler, DeletePlaylistHandler
@@ -24,7 +25,7 @@ export const SinglePlaylistVideos = () => {
         <div>
             <Navbar />
             <Sidebar />
-            <h1 className="heading">Your playlists</h1>
+            <h1 className="heading">Your playlist</h1>
             <div className="each-playlist">
                 <h2 className="empty-heading playlist-title">{title}</h2>
                 <AiFillDelete className={`delete-icon pl-delete ${getClassName()}`}

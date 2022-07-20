@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { usePlaylist } from "../contexts/allContext"
 import { Sidebar, Navbar } from "../components/allComp";
 export const PlayListPage = () => {
+  document.title = "Vivir Videos | Playlists"
   const {
     videoState: { playList },
   } = usePlaylist();

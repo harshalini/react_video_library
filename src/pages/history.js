@@ -3,6 +3,7 @@ import { useHistory } from "../contexts/allContext";
 import { HistoryCard } from "../components/cards/history-card";
 import { ComposeFun } from "../utils";
 export const HistoryPage = () => {
+    document.title = "Vivir Videos | History"
     const { videoState: { historyVid }, DeleteAllHistory } = useHistory();
     const historyVideoList = ComposeFun(historyVid);
     return (

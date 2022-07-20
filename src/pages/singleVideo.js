@@ -16,7 +16,7 @@ export const SingleVideoPage = () => {
     }
     const mp4 = getVideoDetails(video, videoId);
     const { title, views, creator, description, genre, _id } = mp4 || {};
-    
+    document.title = `Vivir Videos | ${title}`
     const getClassName = () => {
         if (playListM)
             return "blur"
