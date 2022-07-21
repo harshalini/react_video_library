@@ -51,12 +51,15 @@ nav ul li {
     cursor: pointer;
     border-radius: 1rem;
 }
+
 .home-link {
     color: var(--default-pink);
     text-decoration: none;
     cursor: pointer;
 }
-.login-btn, .logout-btn {
+
+.login-btn,
+.logout-btn {
     background-color: var(--default-pink);
     color: var(--white);
     font-size: 1.5rem;
@@ -69,7 +72,8 @@ nav ul li {
     border-radius: 1rem;
 }
 
-.login-btn:hover, .logout-btn:hover {
+.login-btn:hover,
+.logout-btn:hover {
     background-color: var(--light-pink);
     color: var(--black);
 }
@@ -188,21 +192,88 @@ span.genre-name {
     margin-left: 17rem;
     text-align: left;
 }
+
 .empty-heading {
     margin-left: 17rem;
     text-align: left;
 }
 
-@media only screen and (max-width: 480px){
-    
+.mobile-navbar, .mobile-nav {
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+
     .lib-sidebar {
         display: none;
     }
-    .header-img {
-        height: 300px;
-        
-    }
-    .explore-btn {
 
+    .header {
+        margin-top: 0;
+    }
+
+    .header-img {
+        height: 270px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: flex;
+        background-color: var(--light-pink);
+        width: 100%;
+        padding-top: 0.2rem;
+        align-items: center;
+    }
+
+    .mobile-navbar .logo {
+        margin-left: 0rem;
+        font-size: 2.5rem;
+        width: 1rem;
+        margin-top: 0;
+        border: solid 4px var(--default-pink);
+        height: 3rem;
+        margin: 0 0 0 0.2rem;
+        margin-right: auto;
+    }
+
+    .explore-btn {
+        font-size: 6rem;
+        margin-left: -9rem;
+        margin-top: 7.4rem;
+    }
+
+    .category-heading {
+        margin-top: -19rem;
+        font-size: 1.8rem;
+    }
+
+    .genre-container {
+        flex-direction: column;
+        margin: auto;
+    }
+    .mobile-nav {
+        display: block;
+    }
+    .mobile-pages {
+        display: flex;
+        list-style: none;
+        position: fixed;
+        bottom: 0;
+        background-color: var(--light-pink);
+        z-index: 10;
+        width: 100%;
+        padding: 0.5rem 0;
+        margin-bottom: 0;
+        justify-content: space-around;
+    }
+    .mobile-pages li {
+        flex-basis: 10%;
+    }
+    .heading, .empty-heading {
+        margin-left: 1rem;
+        margin-top: 1rem;
     }
 }

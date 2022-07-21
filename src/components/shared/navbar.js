@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"
 import { useAuth, useSearch } from "../../contexts/allContext"
-
+import { AiOutlineLogin, AiOutlinePoweroff } from "react-icons/ai"
 export const Navbar = () => {
   const { authUser, logOutHandler } = useAuth();
   const { dispatch } = useSearch();
   const location = useLocation();
   const navigate = useNavigate();
   const path = location.pathname;
-  
+
   const videoPath = (path === "/likes" || path === "/watchLater" || path === "/history")
   const [showSearch, setShowSearch] = useState(true)
 
@@ -25,7 +25,7 @@ export const Navbar = () => {
       setShowSearch(false)
   }, [path])
 
-  const getPlaceHolder = () => videoPath? path.substring(1) : "explore"
+  const getPlaceHolder = () => videoPath ? path.substring(1) : "explore"
 
   return (
     <div className="navbar">
@@ -49,6 +49,38 @@ export const Navbar = () => {
           </li>
         </ul>
       </nav>
+    </div>
+  )
+}
+
+export const MobileNavbar = () => {
+  const { authUser, logOutHandler } = useAuth();
+  const { dispatch } = useSearch();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const path = location.pathname;
+  
+  return (
+    <div className="mobile-navbar">
+      <div className="logo">
+        <Link to="/" className="home-link">vivir</Link>
+      </div>
+      
+        <input placeholder="search" className="search"
+        onChange={(e) => {
+          dispatch({ type: "SEARCH_VID", payload: e.target.value })
+          if(path !== "/videoListing") {
+            navigate("/videoListing")
+            dispatch({ type: "SEARCH_VID", payload: "" })
+          }}}/>
+          
+        
+      <div>
+            {authUser.isUserLoggedIn ?
+              <AiOutlinePoweroff onClick={logOutHandler} /> :
+              <NavLink to="/login" ><AiOutlineLogin /></NavLink>
+            } 
+      </div>
     </div>
   )
 }

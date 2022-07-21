@@ -79,7 +79,7 @@ iframe {
     }
 
     iframe {
-        height: 35%;
+        height: 45%;
     }
 
     .video-actions {
@@ -113,10 +113,10 @@ iframe {
 
     .full iframe {
         transform: rotate(90deg);
-        width: 760px;
-        height: 380px;
+        width: 740px;
+        height: 360px;
         position: fixed;
-        top: 12rem;
+        top: 11.5rem;
         left: -12rem;
         z-index: 10
     }
@@ -164,5 +164,8 @@ iframe {
 
     .show-btn {
         display: inline;
+    }
+    .mustWatch-videos {
+        margin-top: 3rem;
     }
 }

@@ -1,5 +1,7 @@
 import { Navbar, Sidebar, Genres } from "../components/allComp"
 import { Link } from "react-router-dom"
+import { MobileNavbar } from "../components/shared/navbar"
+import { MobileNav } from "../components/shared/sidebar"
 export const Home = () => {
     document.title = "Vivir Videos | Home"
     return (
@@ -17,6 +19,7 @@ export const Home = () => {
                     <Genres />
                 </div>
             </div>
+            <MobileNav />
         </div>
     )
 }

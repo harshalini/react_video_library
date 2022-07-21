@@ -28,7 +28,6 @@ export const SingleVideoPage = () => {
     }
     const getDivClass = () => hideDiv ? "hide-div" : null
 
-    
     return (
         <div>
             <div className={`single-video-page ${getClassName()}`}>
