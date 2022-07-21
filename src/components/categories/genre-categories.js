@@ -7,9 +7,11 @@ export const Genres = () => {
     return (
         <>
         <h1 className="category-heading">Genres</h1>
-            <div className="genre-container">
+            <div className="genre-container"
+            onClick={() => window.scroll({ top: 0, behavior: "smooth" })}>
                 {category.map(({ categoryImg, _id, categoryName }) => (
-                    <div className="ui-component card card-with-textOverlay" key={_id}>
+                    <div className="ui-component card card-with-textOverlay" key={_id}
+                    >
                         <div className="card-image">
                             <Link to={`/videoListing?categoryName=${categoryName}`}
                                 onClick={() => dispatch({ type: "FILTER-BY-GENRE", payload: categoryName })}

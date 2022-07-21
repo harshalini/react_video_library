@@ -10,10 +10,13 @@ export const VideoCard = (v) => {
     const { _id, title, creator, views } = v;
     
     return (
-        <div className="ui-component card card-with-badge">
+        <div className="ui-component card card-with-badge"
+        >
             <Link to={`/singleVideo/${_id}`} className="video-link">
                 <div className="card-image"
-                onClick={() => HistoryVideoHandler(v)}
+                onClick={() => {
+                   window.scroll({ top: 0, behavior: "smooth" })
+                    HistoryVideoHandler(v)}}
                 >
                     <img src={`https://img.youtube.com/vi/${_id}/hqdefault.jpg`} alt="video-thumbnail" />
                 </div>
