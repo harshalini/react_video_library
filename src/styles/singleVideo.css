@@ -79,7 +79,7 @@ iframe {
     }
 
     iframe {
-        height: 45%;
+        height: 50%;
     }
 
     .video-actions {
@@ -111,16 +111,6 @@ iframe {
         margin-top: -1rem;
     }
 
-    .full iframe {
-        transform: rotate(90deg);
-        width: 740px;
-        height: 360px;
-        position: fixed;
-        top: 11.5rem;
-        left: -12rem;
-        z-index: 10
-    }
-
     .views-fullScreen {
         display: flex;
         margin-left: 11rem;
@@ -132,40 +122,10 @@ iframe {
         color: var(--light-pink);
         border: none;
     }
-
-    .full-btn {
-        width: 10rem;
-        padding: 0;
-        height: 2.5rem;
-        background-color: var(--default-pink);
-        color: var(--white);
-        font-weight: 500;
-        border-radius: 1rem;
-        margin-left: 3rem;
-    }
-
-    .exit-full-btn {
-        position: fixed;
-        bottom: 0.5rem;
-        height: 2.5rem;
-        background: var(--default-pink);
-        color: var(--white);
-        border-radius: 1rem;
-        left: 0.5rem;
-        font-weight: 700;
-        font-size: 1.5rem;
-        display: none;
-        z-index: 15;
-    }
-
-    .hide-div {
-        display: none;
-    }
-
-    .show-btn {
-        display: inline;
-    }
     .mustWatch-videos {
-        margin-top: 3rem;
+        margin-top: 2rem;
+    }
+    .video-title {
+        margin-top: -5rem;
     }
 }

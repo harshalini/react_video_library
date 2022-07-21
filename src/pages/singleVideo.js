@@ -3,17 +3,14 @@ import { Sidebar, Navbar, VideoCard, CreatePlaylist } from "../components/allCom
 import { AiFillLike } from "react-icons/ai";
 import { MdWatchLater, MdPlaylistAdd } from "react-icons/md";
 import { useLike, useWatchLater, useVideo, usePlaylist } from "../contexts/allContext";
-import { useState } from "react";
-import { BiExitFullscreen } from "react-icons/bi"
+
 export const SingleVideoPage = () => {
     const { LikeVideoHandler, videoState: { liked }, RemoveLikeVideoHandler } = useLike();
     const { videoState: { watchLater }, AddWatchLaterHandler, RemoveWatchLaterHandler } = useWatchLater();
     const { showPlayListM, playListM } = usePlaylist();
     const { videoId } = useParams();
     const { video } = useVideo();
-    const [fs, setFs] = useState(false)
-    const [hideDiv, setHideDiv] = useState(false)
-    const [showBtn, setShowBtn] = useState(false)
+
     function getVideoDetails(video, videoId) {
         return video.find((mp4) => mp4._id === videoId);
     }
@@ -23,10 +20,7 @@ export const SingleVideoPage = () => {
     const getClassName = () => {
         if (playListM)
             return "blur"
-        if(fs)
-            return "full"
     }
-    const getDivClass = () => hideDiv ? "hide-div" : null
 
     return (
         <div>
@@ -34,19 +28,14 @@ export const SingleVideoPage = () => {
                 <Navbar />
                 <Sidebar />
                 <div className="singleVideo-grid">
-                    <div className={`singleVideo-div ${getClassName()}`}>
+                    <div className={`singleVideo-div`}>
                         <h1 className="video-title">{title}</h1>
                         <iframe
                             width="1460" height="470" src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         <div className="video-actions">
                             <div className="views-fullScreen">
                                 <p className="video-views">Views: {views}</p>
-                                <button className="full-btn"
-                                onClick={() => {
-                                    setFs(true)
-                                    setHideDiv(true)
-                                    setShowBtn(true)
-                                    }}>Watch in fullScreen</button>
+                                
                             </div>
                             <div className="video-btns">
                                 {liked.some(video => video._id === _id) ?
@@ -86,7 +75,7 @@ export const SingleVideoPage = () => {
                             <p className="video-desc">{description}</p>
                         </div>
                     </div>
-                    <div className={`mustWatch-videos ${getDivClass()}`}>
+                    <div className={`mustWatch-videos`}>
                         <h2>Must Watch</h2>
                         {video.filter((vid) => vid.genre === genre).map((v) => {
                             if (v !== mp4)
@@ -96,13 +85,6 @@ export const SingleVideoPage = () => {
                 </div>
             </div>
             {playListM && <CreatePlaylist {...mp4}/>}
-            {showBtn && <button className="exit-full-btn show-btn"
-            onClick={() => {
-                setFs(false)
-                setHideDiv(false)
-                setShowBtn(false)
-            }}
-            ><BiExitFullscreen /></button>}
         </div>
     )
 }

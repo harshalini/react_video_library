@@ -11,7 +11,7 @@ const sidebarPages = [
     {
         _id: uuid(),
         page: "Watch later",
-        icon: "film",
+        icon: "clock",
         link: "/watchLater"
     },
     {

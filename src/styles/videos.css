@@ -136,6 +136,7 @@
     }
     .chips-container {
         margin-left: -2.5rem;
+        margin-top: 0;
     }
     .chips-list {
         flex-wrap: wrap;

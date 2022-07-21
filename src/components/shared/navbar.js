@@ -73,12 +73,12 @@ export const MobileNavbar = () => {
             navigate("/videoListing")
             dispatch({ type: "SEARCH_VID", payload: "" })
           }}}/>
-          
         
       <div>
             {authUser.isUserLoggedIn ?
-              <AiOutlinePoweroff onClick={logOutHandler} /> :
-              <NavLink to="/login" ><AiOutlineLogin /></NavLink>
+              <AiOutlinePoweroff className="log-btn"
+              onClick={logOutHandler} /> :
+              <NavLink to="/login" ><AiOutlineLogin className="log-btn"/></NavLink>
             } 
       </div>
     </div>

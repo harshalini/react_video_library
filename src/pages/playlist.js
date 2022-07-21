@@ -15,7 +15,7 @@ export const PlayListPage = () => {
       {playList.length !== 0 ?
         <div className="genre-container">
           {playList.map(({ _id, title }) => (
-            <div className="ui-component card card-with-textOverlay" key={_id}
+            <div className="ui-component card card-with-textOverlay separate-playlist" key={_id}
               style={{ background: "none" }}
             >
               <div className="card-image">

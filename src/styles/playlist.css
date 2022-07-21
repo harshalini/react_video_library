@@ -115,3 +115,15 @@
     border-radius: 1rem;
     cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+    .playlist-name label {
+        margin-left: -7rem;
+    }
+    .playlist-desc {
+        margin-left:0.5rem;
+    }
+    .separate-playlist {
+        margin-bottom: 3rem;
+    }
+}
