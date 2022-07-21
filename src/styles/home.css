@@ -192,3 +192,17 @@ span.genre-name {
     margin-left: 17rem;
     text-align: left;
 }
+
+@media only screen and (max-width: 480px){
+    
+    .lib-sidebar {
+        display: none;
+    }
+    .header-img {
+        height: 300px;
+        
+    }
+    .explore-btn {
+
+    }
+}

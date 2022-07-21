@@ -9,9 +9,11 @@
 iframe {
     width: 100%;
 }
+
 .singleVideo-div {
     width: 55vw;
 }
+
 .video-actions {
     display: flex;
     width: 55vw;
@@ -27,11 +29,13 @@ iframe {
     padding: 0.5rem;
     border-radius: 10px;
 }
+
 .video-btns {
     display: flex;
     justify-content: space-around;
     width: 30vw;
 }
+
 .video-btns button {
     font-size: 1.2rem;
     color: var(--white);
@@ -42,6 +46,7 @@ iframe {
     background: none;
     cursor: pointer;
 }
+
 .video-actions button span {
     margin-left: 0.5rem;
 }
@@ -52,12 +57,112 @@ iframe {
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .video-creator {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--light-pink);
 }
+
 .video-desc {
     font-size: 1.2rem;
     margin-top: -1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .singleVideo-grid {
+        margin-left: 0;
+    }
+
+    .singleVideo-div {
+        width: 100vw;
+    }
+
+    iframe {
+        height: 35%;
+    }
+
+    .video-actions {
+        flex-direction: column;
+        border-bottom: none;
+        margin-top: 0;
+    }
+
+    .video-btns {
+        justify-content: center;
+        width: 300px;
+        margin-left: 9rem;
+        margin-top: -1rem;
+    }
+
+    .video-btns button {
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+
+    .video-actions p {
+        margin-left: -3rem;
+        font-size: 1rem;
+    }
+
+    .creator-and-desc {
+        border-bottom: solid 3px var(--default-pink);
+        margin-left: 1rem;
+        margin-top: -1rem;
+    }
+
+    .full iframe {
+        transform: rotate(90deg);
+        width: 760px;
+        height: 380px;
+        position: fixed;
+        top: 12rem;
+        left: -12rem;
+        z-index: 10
+    }
+
+    .views-fullScreen {
+        display: flex;
+        margin-left: 11rem;
+        align-items: center;
+    }
+
+    .views-fullScreen .video-views {
+        width: 5.5rem;
+        color: var(--light-pink);
+        border: none;
+    }
+
+    .full-btn {
+        width: 10rem;
+        padding: 0;
+        height: 2.5rem;
+        background-color: var(--default-pink);
+        color: var(--white);
+        font-weight: 500;
+        border-radius: 1rem;
+        margin-left: 3rem;
+    }
+
+    .exit-full-btn {
+        position: fixed;
+        bottom: 0.5rem;
+        height: 2.5rem;
+        background: var(--default-pink);
+        color: var(--white);
+        border-radius: 1rem;
+        left: 0.5rem;
+        font-weight: 700;
+        font-size: 1.5rem;
+        display: none;
+        z-index: 15;
+    }
+
+    .hide-div {
+        display: none;
+    }
+
+    .show-btn {
+        display: inline;
+    }
 }

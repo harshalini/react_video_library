@@ -128,3 +128,31 @@
 .video-link {
     text-decoration: none;
 }
+
+@media screen and (max-width: 480px) {
+    .videos-grid {
+        margin-left: 0;
+        gap: 0;
+    }
+    .chips-container {
+        margin-left: -2.5rem;
+    }
+    .chips-list {
+        flex-wrap: wrap;
+        font-size: 1rem;
+    }
+    .chips-list label {
+        margin-right: 0;
+    }
+    .like-btn, .watch-later-btn {
+        visibility: visible;
+    }
+    .like-btn {
+        margin-left: 7.9rem;
+        padding: 0.2rem;
+    }
+    .watch-later-btn {
+        padding: 0.2rem;
+        margin-left: 15rem;
+    }
+}
