@@ -1,9 +1,5 @@
 @import url(./home.css);
 
-:root {
-    --card-color: #181818;
-}
-
 .lib-sidebar {
     float: left;
     position: fixed;
@@ -133,6 +129,7 @@
     .videos-grid {
         margin-left: 0;
         gap: 0;
+        margin-bottom: 3rem;
     }
     .chips-container {
         margin-left: -2.5rem;
@@ -149,11 +146,17 @@
         visibility: visible;
     }
     .like-btn {
-        margin-left: 7.9rem;
+        margin-left: 7.7rem;
         padding: 0.2rem;
     }
     .watch-later-btn {
         padding: 0.2rem;
         margin-left: 15rem;
+    }
+    .heading {
+        font-size: 1.6rem;
+    }
+    .empty-heading {
+        font-size: 1.3rem;
     }
 }

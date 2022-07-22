@@ -126,4 +126,13 @@
     .separate-playlist {
         margin-bottom: 3rem;
     }
+    .history-del {
+        margin: 1rem 0 0 2rem;
+    }
+    .playlist-title {
+        margin-bottom: 1rem;
+    }
+    .playlist-heading {
+        margin-bottom: 0.5rem;
+    }
 }

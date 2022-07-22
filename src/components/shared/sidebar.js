@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { v4 as uuid } from "uuid"
 
@@ -34,10 +35,10 @@ const sidebarPages = [
     }
 ]
 
-const activeStyle = ({ isActive }) => ({
-    color: isActive ? "var(--default-pink)" : "none",
-})
 export const Sidebar = () => {
+    const activeStyle = ({ isActive }) => ({
+        color: isActive ? "var(--default-pink)" : "none",
+    })
     return (
         <div className="flex-div">
             <aside className="lib-sidebar">
@@ -65,17 +66,22 @@ export const Sidebar = () => {
 }
 
 export const MobileNav = () => {
+    const [activeIcon, setActiveIcon] = useState("active: false")
+    const activeStyle = ({ isActive }) => ({
+        className: isActive? `home-link act`: `home-link`
+    })
+    
     return (
     <div className="mobile-nav">
         <ul className="mobile-pages">
             {sidebarPages.map(({ icon, link, _id }) => (
                 <li key={_id}>
                     <NavLink
-                        style={activeStyle}
                         to={`${link}`}
-                        className="home-link"
+                        className={({isActive}) => isActive ? "home-link act": "home-link" }
                         >
-                        <i className={`sidebar-icon fas fa-${icon}`}></i>
+                       <i 
+                       className={`sidebar-icon fas fa-${icon}`}></i>
                     </NavLink>
                 </li>
             ))}
