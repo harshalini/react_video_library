@@ -16,7 +16,7 @@
 .playlist-heading {
     font-weight: 700;
     font-size: 1.5rem;
-    margin: 1rem 0
+    margin: 1rem 0;
 }
 .playlist-input { 
     display: flex;
@@ -132,7 +132,7 @@
     .playlist-title {
         margin-bottom: 1rem;
     }
-    .playlist-heading {
+    .your-playlist-heading {
         margin-bottom: 0.5rem;
     }
 }

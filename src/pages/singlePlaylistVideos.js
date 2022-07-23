@@ -25,7 +25,7 @@ export const SinglePlaylistVideos = () => {
         <div>
             <Navbar />
             <Sidebar />
-            <h1 className="heading playlist-heading">Your playlist</h1>
+            <h1 className="heading your-playlist-heading">Your playlist</h1>
             <div className="each-playlist">
                 <h2 className="empty-heading playlist-title">{title}</h2>
                 <AiFillDelete className={`delete-icon pl-delete ${getClassName()}`}
